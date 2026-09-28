@@ -1,0 +1,485 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f7f8f5">
+  <meta name="description" content="Undangan pernikahan Afif Dhiya'ul Haq dan Jashyka Asadiyyah Qonita, 10 Oktober 2026 di Paciran, Lamongan.">
+  <title>Afif &amp; Sasa | Undangan Pernikahan</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400;1,500&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      color-scheme: light;
+      --blue: #78a4cb;
+      --blue-light: #95bdd7;
+      --blue-pale: #eaf1f4;
+      --ink: #20333c;
+      --muted: #71818a;
+      --paper: #f7f8f5;
+      --white: #fff;
+      --line: #dce4e5;
+      --gold: #b49768;
+      --serif: "Playfair Display", Georgia, serif;
+      --sans: "DM Sans", sans-serif;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; }
+    html { scroll-behavior: smooth; scroll-padding-top: 5rem; }
+    body { margin: 0; background: var(--paper); color: var(--ink); font-family: var(--sans); -webkit-font-smoothing: antialiased; }
+    body.is-locked { overflow: hidden; }
+    a { color: inherit; }
+    button { color: inherit; font: inherit; }
+    .eyebrow { margin: 0; color: var(--blue); font-size: .68rem; font-weight: 600; letter-spacing: .17em; text-transform: uppercase; }
+
+    .cover {
+      position: fixed;
+      z-index: 10;
+      inset: 0;
+      display: grid;
+      place-items: center;
+      overflow: hidden;
+      background: #233b46;
+      color: var(--white);
+      transition: opacity .65s ease, visibility .65s ease;
+    }
+    .cover::before {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(180deg, rgb(17 32 40 / 23%), rgb(17 32 40 / 65%)), url("pictures/LSR_0063.JPG.jpeg") center 66% / cover;
+      content: "";
+      transform: scale(1.015);
+    }
+    .cover::after { position: absolute; inset: 1.2rem; border: 1px solid rgb(255 255 255 / 48%); content: ""; pointer-events: none; }
+    .cover-content { position: relative; z-index: 1; width: min(90%, 620px); padding: 3rem 1.5rem; text-align: center; animation: arrive .8s both; }
+    .cover .eyebrow { color: #d9e8f0; }
+    .cover h1 { margin: 1.2rem 0 .8rem; font: 400 clamp(3.2rem, 10vw, 6.8rem)/.96 var(--serif); }
+    .cover-date { margin: 1.5rem 0 2rem; color: #eef2f0; font-size: .85rem; letter-spacing: .17em; }
+    .cover-button { min-width: 190px; padding: .92rem 1.4rem; border: 1px solid rgb(255 255 255 / 80%); background: rgb(255 255 255 / 8%); color: var(--white); cursor: pointer; font-size: .76rem; letter-spacing: .12em; text-transform: uppercase; transition: background .2s, color .2s; }
+    .cover-button:hover, .cover-button:focus-visible { background: var(--white); color: var(--ink); }
+    .cover.is-closed { visibility: hidden; opacity: 0; pointer-events: none; }
+
+    .site-header { display: flex; min-height: 76px; align-items: center; justify-content: space-between; gap: 1rem; padding: 0 clamp(1.25rem, 6vw, 6rem); border-bottom: 1px solid var(--line); }
+    .monogram { color: var(--ink); font: 500 1.35rem var(--serif); text-decoration: none; }
+    .header-date { color: var(--muted); font-size: .67rem; letter-spacing: .13em; text-transform: uppercase; }
+    .header-link { color: var(--ink); font-size: .72rem; text-decoration-color: var(--blue); text-underline-offset: 5px; }
+
+    .hero { display: grid; min-height: min(730px, calc(100svh - 76px)); grid-template-columns: minmax(0, 1.12fr) minmax(330px, .88fr); padding: clamp(1rem, 3.2vw, 3rem) clamp(1.25rem, 6vw, 6rem); gap: clamp(1.5rem, 4vw, 4rem); align-items: stretch; }
+    .hero-photo { position: relative; min-height: 510px; overflow: hidden; background: var(--blue-pale); }
+    .hero-photo img { position: absolute; width: 100%; height: 100%; inset: 0; object-fit: cover; object-position: 51% 58%; }
+    .hero-photo::after { position: absolute; inset: 0; border: 1px solid rgb(255 255 255 / 30%); content: ""; pointer-events: none; }
+    .hero-copy { display: flex; flex-direction: column; align-items: flex-start; justify-content: center; padding: 2rem 0 2rem clamp(.25rem, 2vw, 2rem); }
+    .hero-copy .eyebrow { margin-bottom: 1.35rem; }
+    .hero-copy h1 { margin: 0; font: 400 clamp(3.25rem, 6.3vw, 6.1rem)/.99 var(--serif); }
+    .hero-copy h1 span { display: block; }
+    .ampersand { padding: .12em 0; color: var(--blue); font-style: italic; }
+    .hero-rule { width: 66px; height: 1px; margin: 1.8rem 0 1.35rem; background: var(--gold); }
+    .hero-date { margin: 0; font-size: .76rem; letter-spacing: .15em; text-transform: uppercase; }
+    .hero-note { max-width: 310px; margin: 1.1rem 0 0; color: var(--muted); font: italic 1.04rem/1.7 var(--serif); }
+    .scroll-cue { display: inline-flex; align-items: center; gap: .7rem; margin-top: 2.25rem; color: var(--ink); font-size: .68rem; letter-spacing: .1em; text-decoration: none; text-transform: uppercase; }
+    .scroll-cue::after { width: 32px; height: 1px; background: var(--blue); content: ""; transition: width .2s; }
+    .scroll-cue:hover::after { width: 50px; }
+
+    .intro { display: grid; min-height: 280px; place-items: center; padding: 4rem 1.5rem; background: var(--blue-pale); text-align: center; }
+    .intro-inner { max-width: 690px; }
+    .intro .eyebrow { color: #587c96; }
+    .intro h2 { margin: 1rem 0 .8rem; font: 400 clamp(2rem, 4vw, 3.25rem)/1.2 var(--serif); }
+    .intro p:last-child { margin: 0; color: var(--muted); font-size: .83rem; line-height: 1.8; }
+
+    .section { padding: clamp(4rem, 9vw, 7rem) clamp(1.25rem, 7vw, 7rem); }
+    .section-heading { margin: 0 0 .8rem; font: 400 clamp(2rem, 4vw, 3rem)/1.15 var(--serif); text-align: center; }
+    .section-subtitle { margin: 0; color: var(--muted); font-size: .82rem; line-height: 1.8; text-align: center; }
+    .couple-section { background: var(--white); }
+    .family-grid { display: grid; width: min(100%, 950px); grid-template-columns: 1fr auto 1fr; align-items: center; margin: 3rem auto 0; gap: clamp(1.3rem, 5vw, 4rem); }
+    .family { text-align: center; }
+    .family h3 { margin: .65rem 0 .85rem; font: 400 clamp(1.55rem, 3vw, 2.5rem)/1.22 var(--serif); }
+    .family p { margin: 0; color: var(--muted); font-size: .8rem; line-height: 1.85; }
+    .family-mark { display: grid; width: 42px; height: 42px; place-items: center; border: 1px solid #bfd1d7; border-radius: 50%; color: var(--blue); font: italic 1.3rem var(--serif); }
+    .family-caption { color: var(--gold); font-size: .65rem; letter-spacing: .14em; text-transform: uppercase; }
+
+    .gallery-section { background: var(--blue-pale); }
+    .gallery-grid { display: grid; width: min(100%, 1180px); grid-template-columns: repeat(12, minmax(0, 1fr)); grid-auto-rows: clamp(110px, 14vw, 190px); margin: 3rem auto 0; gap: 12px; }
+    .gallery-card { position: relative; display: block; min-width: 0; min-height: 0; overflow: hidden; padding: 0; border: 0; background: #dce7e9; cursor: zoom-in; }
+    .gallery-card img { display: block; width: 100%; height: 100%; object-fit: cover; transition: transform .4s ease; }
+    .gallery-card:not(:first-child) img { object-position: center 70%; }
+    .gallery-card:nth-child(3) img, .gallery-card:nth-child(5) img, .gallery-card:nth-child(6) img { object-position: center 35%; }
+    .gallery-card:hover img, .gallery-card:focus-visible img { transform: scale(1.035); }
+    .gallery-card:focus-visible { outline: 3px solid var(--ink); outline-offset: 3px; }
+    .gallery-card:nth-child(6n + 1) { grid-column: span 7; grid-row: span 2; }
+    .gallery-card:nth-child(6n + 2), .gallery-card:nth-child(6n + 3) { grid-column: span 5; }
+    .gallery-card:nth-child(6n + 4), .gallery-card:nth-child(6n + 5), .gallery-card:nth-child(6n + 6) { grid-column: span 4; }
+
+    .lightbox { position: fixed; width: min(94vw, 1200px); height: min(92svh, 850px); max-width: none; max-height: none; overflow: hidden; padding: 1.25rem; border: 0; background: #17262d; color: var(--white); }
+    .lightbox::backdrop { background: rgb(13 24 30 / 88%); }
+    .lightbox-layout { display: grid; height: 100%; grid-template-rows: auto minmax(0, 1fr) auto; }
+    .lightbox-toolbar { display: flex; align-items: center; justify-content: space-between; padding-bottom: .9rem; }
+    .lightbox-count { color: #c5d5db; font-size: .7rem; letter-spacing: .12em; }
+    .lightbox-button { display: grid; width: 42px; height: 42px; place-items: center; border: 1px solid rgb(255 255 255 / 35%); background: transparent; color: var(--white); cursor: pointer; }
+    .lightbox-button:hover, .lightbox-button:focus-visible { background: rgb(255 255 255 / 14%); }
+    .lightbox-button svg { width: 20px; height: 20px; fill: none; stroke: currentColor; stroke-linecap: round; stroke-linejoin: round; stroke-width: 1.6; }
+    .lightbox-stage { display: grid; min-height: 0; grid-template-columns: 42px minmax(0, 1fr) 42px; align-items: center; gap: clamp(.5rem, 2vw, 1.5rem); }
+    .lightbox-stage img { display: block; width: 100%; height: 100%; min-height: 0; object-fit: contain; }
+    .lightbox-caption { padding-top: .85rem; color: #d7e0e2; font: italic 1rem var(--serif); text-align: center; }
+
+    .event-section { display: grid; grid-template-columns: .92fr 1.08fr; align-items: center; gap: clamp(2rem, 8vw, 7rem); background: var(--paper); }
+    .countdown-block { text-align: center; }
+    .countdown-block .eyebrow { margin-bottom: .8rem; }
+    .countdown { display: grid; grid-template-columns: repeat(4, 1fr); margin-top: 2rem; }
+    .count-unit { padding: .25rem .5rem; border-right: 1px solid var(--line); }
+    .count-unit:last-child { border: 0; }
+    .count-value { display: block; color: var(--ink); font: 400 clamp(1.6rem, 3.3vw, 2.6rem)/1 var(--serif); font-variant-numeric: tabular-nums; }
+    .count-label { display: block; margin-top: .55rem; color: var(--muted); font-size: .59rem; letter-spacing: .09em; text-transform: uppercase; }
+    .event-details { padding: 2.3rem clamp(1.4rem, 4vw, 3.4rem); border-left: 1px solid #c4d5dc; }
+    .event-details .eyebrow { margin-bottom: .8rem; }
+    .event-details h2 { margin: 0 0 1rem; font: 400 clamp(1.8rem, 3vw, 2.6rem)/1.2 var(--serif); }
+    .event-address { max-width: 400px; margin: 0; color: var(--muted); font-size: .85rem; line-height: 1.85; }
+    .event-date { margin: 1.1rem 0 0; color: var(--ink); font-size: .78rem; font-weight: 600; }
+    .action-row { display: flex; flex-wrap: wrap; gap: .7rem; margin-top: 1.5rem; }
+    .action-link, .action-button { display: inline-flex; min-height: 43px; align-items: center; justify-content: center; gap: .55rem; padding: .7rem 1rem; border: 1px solid var(--blue); background: transparent; color: var(--ink); cursor: pointer; font-size: .72rem; text-decoration: none; transition: background .2s, color .2s; }
+    .action-link:hover, .action-button:hover { background: var(--blue); color: var(--white); }
+    .action-link svg, .action-button svg { width: 16px; height: 16px; fill: none; stroke: currentColor; stroke-linecap: round; stroke-linejoin: round; stroke-width: 1.6; }
+
+    .gift-section { background: var(--white); }
+    .gift-inner { width: min(100%, 720px); margin: 0 auto; text-align: center; }
+    .gift-account { display: flex; align-items: center; justify-content: space-between; gap: 1.5rem; margin: 2rem auto 0; padding: 1.4rem 0; border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); text-align: left; }
+    .gift-brand { display: inline-flex; align-items: center; gap: .55rem; margin-bottom: .55rem; color: #ee4d2d; font-size: .78rem; font-weight: 600; }
+    .gift-brand svg { width: 25px; height: 25px; flex: 0 0 auto; }
+    .gift-number { margin: 0; font: 400 clamp(1.2rem, 3vw, 1.7rem)/1.35 var(--serif); font-variant-numeric: tabular-nums; }
+    .gift-feedback { display: block; min-height: 1.5rem; margin-top: .6rem; color: var(--muted); font-size: .72rem; }
+
+    .closing { display: grid; min-height: 330px; place-items: center; padding: 4rem 1.5rem; background: #e4edf0; text-align: center; }
+    .closing-inner { max-width: 620px; }
+    .closing h2 { margin: .8rem 0; font: 400 clamp(2.1rem, 5vw, 3.7rem)/1.1 var(--serif); }
+    .closing p:not(.eyebrow) { margin: 0; color: #61737d; font: italic 1rem/1.8 var(--serif); }
+    .closing .signature { margin-top: 1.5rem !important; color: var(--ink) !important; font: 400 1.55rem var(--serif) !important; }
+    footer { display: flex; min-height: 74px; align-items: center; justify-content: center; padding: 1rem; color: var(--muted); font-size: .67rem; letter-spacing: .06em; text-align: center; }
+
+    .reveal { opacity: 0; transform: translateY(16px); transition: opacity .65s ease, transform .65s ease; }
+    .reveal.is-visible { opacity: 1; transform: translateY(0); }
+    @keyframes arrive { from { opacity: 0; transform: translateY(12px); } to { opacity: 1; transform: translateY(0); } }
+
+    @media (max-width: 760px) {
+      html { scroll-padding-top: 1rem; }
+      .site-header { min-height: 64px; padding-inline: 1.2rem; }
+      .header-date { font-size: .58rem; }
+      .header-link { font-size: .67rem; }
+      .hero { min-height: 0; grid-template-columns: 1fr; padding: .9rem 1rem 2.5rem; gap: 1.6rem; }
+      .hero-photo { min-height: 0; aspect-ratio: 1 / 1.05; }
+      .hero-photo img { object-position: 51% 61%; }
+      .hero-copy { align-items: center; padding: .7rem .5rem 1rem; text-align: center; }
+      .hero-copy .eyebrow { margin-bottom: .9rem; }
+      .hero-copy h1 { font-size: clamp(3.35rem, 15vw, 5.3rem); }
+      .hero-rule { margin: 1.2rem 0 1rem; }
+      .hero-note { margin-top: .75rem; }
+      .scroll-cue { margin-top: 1.35rem; }
+      .family-grid { gap: .75rem; }
+      .family h3 { font-size: clamp(1.35rem, 6vw, 2rem); }
+      .family p { font-size: .73rem; }
+      .family-mark { width: 35px; height: 35px; }
+      .gallery-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); grid-auto-rows: auto; gap: 8px; }
+      .gallery-card { aspect-ratio: 1 / 1.12; }
+      .gallery-card:nth-child(n) { grid-column: span 1; grid-row: span 1; }
+      .gallery-card:first-child { grid-column: span 2; aspect-ratio: 1.35 / 1; }
+      .lightbox { width: 100vw; height: 100svh; padding: .75rem; }
+      .lightbox-stage { grid-template-columns: 36px minmax(0, 1fr) 36px; gap: .35rem; }
+      .lightbox-button { width: 36px; height: 40px; }
+      .event-section { grid-template-columns: 1fr; gap: 3rem; }
+      .event-details { width: min(100%, 500px); justify-self: center; border-top: 1px solid #c4d5dc; border-left: 0; padding: 2rem .3rem 0; text-align: center; }
+      .event-address { margin-inline: auto; }
+      .action-row { justify-content: center; }
+      .gift-account { align-items: flex-start; gap: 1rem; }
+      .gift-copy { flex-shrink: 0; }
+    }
+    @media (max-width: 390px) {
+      .header-date { letter-spacing: .07em; }
+      .family-grid { grid-template-columns: 1fr; gap: 1.6rem; }
+      .family-mark { margin: 0 auto; }
+      .count-label { font-size: .52rem; letter-spacing: .04em; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after { scroll-behavior: auto !important; animation-duration: .01ms !important; animation-iteration-count: 1 !important; transition-duration: .01ms !important; }
+      .reveal { opacity: 1; transform: none; }
+    }
+  </style>
+</head>
+<body class="is-locked">
+  <div class="cover" id="cover" role="dialog" aria-modal="true" aria-labelledby="cover-title">
+    <div class="cover-content">
+      <p class="eyebrow">Undangan pernikahan</p>
+      <h1 id="cover-title">Afif <i>&amp;</i><br>Sasa</h1>
+      <p class="cover-date">10 . 10 . 2026</p>
+      <button class="cover-button" id="open-invitation" type="button">Buka undangan</button>
+    </div>
+  </div>
+
+  <header class="site-header">
+    <a class="monogram" href="#home" aria-label="Afif dan Jashyka">A <span style="color: var(--blue)">&amp;</span> J</a>
+    <span class="header-date">10 Oktober 2026</span>
+    <a class="header-link" href="#acara">Detail acara</a>
+  </header>
+
+  <main>
+    <section class="hero" id="home" aria-labelledby="couple-names">
+      <div class="hero-photo">
+        <img src="pictures/LSR_0063.JPG.jpeg" alt="Afif dan Jashyka mengenakan busana pengantin bernuansa biru" fetchpriority="high">
+      </div>
+      <div class="hero-copy">
+        <p class="eyebrow">Dengan memohon rahmat dan ridha Allah SWT</p>
+        <h1 id="couple-names"><span>Afif Dhiya'ul</span><span>Haq</span><span class="ampersand">&amp;</span><span>Jashyka Asadiyyah</span><span>Qonita</span></h1>
+        <div class="hero-rule" aria-hidden="true"></div>
+        <p class="hero-date">Sabtu, 10 Oktober 2026</p>
+        <p class="hero-note">Dengan penuh kebahagiaan, kami mengundang Anda untuk hadir dan berbagi doa.</p>
+        <a class="scroll-cue" href="#mempelai">Kenali kedua mempelai</a>
+      </div>
+    </section>
+
+    <section class="intro" aria-labelledby="intro-title">
+      <div class="intro-inner reveal">
+        <p class="eyebrow">Sebuah awal yang baru</p>
+        <h2 id="intro-title">Dua nama, satu perjalanan.</h2>
+        <p>Dengan rasa syukur, kami bermaksud menyelenggarakan pernikahan putra-putri kami. Kehadiran dan doa restu Anda menjadi kebahagiaan bagi keluarga kami.</p>
+      </div>
+    </section>
+
+    <section class="section couple-section" id="mempelai" aria-labelledby="family-title">
+      <p class="eyebrow" style="text-align:center">Dengan hormat</p>
+      <h2 class="section-heading" id="family-title">Keluarga kedua mempelai</h2>
+      <p class="section-subtitle">Merupakan kebahagiaan bagi kami atas doa dan restu keluarga.</p>
+      <div class="family-grid">
+        <article class="family reveal">
+          <p class="family-caption">Putra dari</p>
+          <h3>Afif Dhiya'ul Haq</h3>
+          <p>Bapak Sukir<br>&amp; Ibu Aminah</p>
+        </article>
+        <span class="family-mark" aria-hidden="true">&amp;</span>
+        <article class="family reveal">
+          <p class="family-caption">Putri dari</p>
+          <h3>Jashyka Asadiyyah Qonita</h3>
+          <p>Bapak Elly Yanto<br>&amp; Ibu Heni Susanti</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="section gallery-section" id="galeri" aria-labelledby="gallery-title">
+      <p class="eyebrow" style="text-align:center">Potret pilihan</p>
+      <h2 class="section-heading" id="gallery-title">Galeri kenangan</h2>
+      <p class="section-subtitle">Beberapa momen dalam perjalanan menuju hari istimewa.</p>
+      <div class="gallery-grid">
+        <button class="gallery-card" type="button" data-src="pictures/LSR_0016.JPG.jpeg" data-alt="Afif dan Jashyka berpose bersama di pelaminan" data-caption="Bersama di pelaminan">
+          <img src="pictures/thumbs/LSR_0016.jpg" alt="" loading="lazy" decoding="async">
+        </button>
+        <button class="gallery-card" type="button" data-src="pictures/LSR_0071.JPG.jpeg" data-alt="Afif dan Jashyka berpose dalam busana bernuansa biru" data-caption="Dalam balutan warna biru">
+          <img src="pictures/thumbs/LSR_0071.jpg" alt="" loading="lazy" decoding="async">
+        </button>
+        <button class="gallery-card" type="button" data-src="pictures/LSR_0077.JPG.jpeg" data-alt="Potret pasangan pengantin" data-caption="Sepotong kisah berdua">
+          <img src="pictures/thumbs/LSR_0077.jpg" alt="" loading="lazy" decoding="async">
+        </button>
+        <button class="gallery-card" type="button" data-src="pictures/LSR_0092.JPG.jpeg" data-alt="Potret pengantin bersama dekorasi bunga biru" data-caption="Di antara bunga-bunga">
+          <img src="pictures/thumbs/LSR_0092.jpg" alt="" loading="lazy" decoding="async">
+        </button>
+        <button class="gallery-card" type="button" data-src="pictures/LSR_0010.jpg.jpeg" data-alt="Afif dan Jashyka berpose untuk sesi foto pernikahan" data-caption="Sesi foto hari istimewa">
+          <img src="pictures/thumbs/LSR_0010.jpg" alt="" loading="lazy" decoding="async">
+        </button>
+        <button class="gallery-card" type="button" data-src="pictures/LSR_0012.JPG.jpeg" data-alt="Potret pasangan pengantin dalam busana biru dan putih" data-caption="Kenangan yang disimpan">
+          <img src="pictures/thumbs/LSR_0012.jpg" alt="" loading="lazy" decoding="async">
+        </button>
+      </div>
+    </section>
+
+    <section class="section event-section" id="acara" aria-labelledby="event-title">
+      <div class="countdown-block reveal">
+        <p class="eyebrow">Menuju hari bahagia</p>
+        <h2 class="section-heading" id="event-title">Sampai bertemu</h2>
+        <div class="countdown" aria-label="Hitung mundur menuju hari pernikahan">
+          <div class="count-unit"><span class="count-value" id="days">--</span><span class="count-label">Hari</span></div>
+          <div class="count-unit"><span class="count-value" id="hours">--</span><span class="count-label">Jam</span></div>
+          <div class="count-unit"><span class="count-value" id="minutes">--</span><span class="count-label">Menit</span></div>
+          <div class="count-unit"><span class="count-value" id="seconds">--</span><span class="count-label">Detik</span></div>
+        </div>
+      </div>
+      <div class="event-details reveal">
+        <p class="eyebrow">Catat tanggalnya</p>
+        <h2>Acara pernikahan</h2>
+        <p class="event-address">Lapangan Jabal Nur<br>Utara Kelurahan Blimbing<br>Paciran, Lamongan</p>
+        <p class="event-date">Sabtu, 10 Oktober 2026</p>
+        <div class="action-row">
+          <a class="action-link" href="https://www.google.com/maps/search/?api=1&amp;query=Lapangan+Jabal+Nur%2C+Utara+Kelurahan+Blimbing%2C+Paciran%2C+Lamongan" target="_blank" rel="noopener noreferrer">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 10c0 5-8 12-8 12S4 15 4 10a8 8 0 1 1 16 0Z"></path><circle cx="12" cy="10" r="2.5"></circle></svg>
+            Lihat peta
+          </a>
+          <a class="action-link" href="https://calendar.google.com/calendar/render?action=TEMPLATE&amp;text=Acara+Pernikahan+Afif+%26+Jashyka&amp;dates=20261010%2F20261011&amp;details=Undangan+pernikahan+Afif+Dhiya%27ul+Haq+dan+Jashyka+Asadiyyah+Qonita&amp;location=Lapangan+Jabal+Nur%2C+Utara+Kelurahan+Blimbing%2C+Paciran%2C+Lamongan" target="_blank" rel="noopener noreferrer">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="16" rx="1"></rect><path d="M16 3v4M8 3v4M3 10h18"></path></svg>
+            Simpan tanggal
+          </a>
+          <button class="action-button" id="share-invitation" type="button" aria-label="Bagikan undangan">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="18" cy="5" r="3"></circle><circle cx="6" cy="12" r="3"></circle><circle cx="18" cy="19" r="3"></circle><path d="m8.7 10.7 6.6-4.4m-6.6 7 6.6 4.4"></path></svg>
+            <span id="share-label">Bagikan</span>
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <section class="section gift-section" id="hadiah" aria-labelledby="gift-title">
+      <div class="gift-inner reveal">
+        <p class="eyebrow">Ungkapan kasih</p>
+        <h2 class="section-heading" id="gift-title">Tanda kasih</h2>
+        <p class="section-subtitle">Doa dan kehadiran Anda adalah hadiah terindah. Bagi yang ingin berbagi tanda kasih secara digital, dapat melalui:</p>
+        <div class="gift-account">
+          <div>
+            <div class="gift-brand" aria-label="ShopeePay">
+              <svg viewBox="0 0 32 32" role="img" aria-hidden="true"><rect x="2" y="2" width="28" height="28" rx="8" fill="#ee4d2d"></rect><path d="M10 12h12l-1 11h-10l-1-11Zm3 0V9.5a3 3 0 0 1 6 0V12" fill="none" stroke="#fff" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8"></path><path d="M13.2 16.5c.7-.7 1.6-1 2.8-1 1.5 0 2.7.6 2.7 1.8 0 1.1-.9 1.5-2.5 1.9-1.1.3-1.7.6-1.7 1.2 0 .5.5.9 1.5.9 1 0 1.9-.3 2.6-.9" fill="none" stroke="#fff" stroke-linecap="round" stroke-width="1.2"></path></svg>
+              <span>ShopeePay</span>
+            </div>
+            <p class="gift-number" id="spay-number">083123499055</p>
+          </div>
+          <button class="action-button gift-copy" id="copy-spay" type="button">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="8" y="8" width="12" height="12" rx="1"></rect><path d="M16 8V5a1 1 0 0 0-1-1H5a1 1 0 0 0-1 1v10a1 1 0 0 0 1 1h3"></path></svg>
+            Salin nomor
+          </button>
+        </div>
+        <span class="gift-feedback" id="gift-feedback" aria-live="polite"></span>
+      </div>
+    </section>
+
+    <section class="closing" aria-labelledby="closing-title">
+      <div class="closing-inner reveal">
+        <p class="eyebrow">Kehadiran Anda adalah anugerah</p>
+        <h2 id="closing-title">Dengan penuh syukur,<br>kami menanti kehadiran Anda.</h2>
+        <p>Terima kasih atas doa, perhatian, dan kasih yang menyertai langkah baru kami.</p>
+        <p class="signature">Afif &amp; Jashyka</p>
+      </div>
+    </section>
+  </main>
+
+  <dialog class="lightbox" id="gallery-lightbox" aria-label="Galeri foto pernikahan">
+    <div class="lightbox-layout">
+      <div class="lightbox-toolbar">
+        <span class="lightbox-count" id="lightbox-count" aria-live="polite">01 / 06</span>
+        <button class="lightbox-button" id="lightbox-close" type="button" aria-label="Tutup foto">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m6 6 12 12M18 6 6 18"></path></svg>
+        </button>
+      </div>
+      <div class="lightbox-stage">
+        <button class="lightbox-button" id="lightbox-previous" type="button" aria-label="Foto sebelumnya">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m15 18-6-6 6-6"></path></svg>
+        </button>
+        <img id="lightbox-image" src="" alt="">
+        <button class="lightbox-button" id="lightbox-next" type="button" aria-label="Foto berikutnya">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m9 18 6-6-6-6"></path></svg>
+        </button>
+      </div>
+      <p class="lightbox-caption" id="lightbox-caption"></p>
+    </div>
+  </dialog>
+
+  <footer>Afif Dhiya'ul Haq &amp; Jashyka Asadiyyah Qonita &nbsp;·&nbsp; 10.10.2026</footer>
+
+  <script>
+    const cover = document.querySelector("#cover");
+    const openButton = document.querySelector("#open-invitation");
+
+    openButton.addEventListener("click", () => {
+      cover.classList.add("is-closed");
+      document.body.classList.remove("is-locked");
+      document.querySelector("#home").setAttribute("tabindex", "-1");
+      document.querySelector("#home").focus({ preventScroll: true });
+    });
+
+    function updateCountdown() {
+      const now = new Date();
+      const weddingDay = new Date(2026, 9, 10);
+      const remaining = Math.max(0, weddingDay.getTime() - now.getTime());
+      const units = {
+        days: Math.floor(remaining / 86400000),
+        hours: Math.floor(remaining / 3600000) % 24,
+        minutes: Math.floor(remaining / 60000) % 60,
+        seconds: Math.floor(remaining / 1000) % 60
+      };
+
+      for (const [unit, value] of Object.entries(units)) {
+        document.querySelector(`#${unit}`).textContent = String(value).padStart(2, "0");
+      }
+    }
+
+    updateCountdown();
+    window.setInterval(updateCountdown, 1000);
+
+    const revealElements = document.querySelectorAll(".reveal");
+    if ("IntersectionObserver" in window && !window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+      const observer = new IntersectionObserver((entries, currentObserver) => {
+        for (const entry of entries) {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("is-visible");
+            currentObserver.unobserve(entry.target);
+          }
+        }
+      }, { threshold: .14 });
+      revealElements.forEach((element) => observer.observe(element));
+    } else {
+      revealElements.forEach((element) => element.classList.add("is-visible"));
+    }
+
+    const galleryCards = [...document.querySelectorAll(".gallery-card")];
+    const lightbox = document.querySelector("#gallery-lightbox");
+    const lightboxImage = document.querySelector("#lightbox-image");
+    let currentPhotoIndex = 0;
+
+    function showPhoto(index) {
+      currentPhotoIndex = (index + galleryCards.length) % galleryCards.length;
+      const card = galleryCards[currentPhotoIndex];
+      lightboxImage.src = card.dataset.src;
+      lightboxImage.alt = card.dataset.alt;
+      document.querySelector("#lightbox-caption").textContent = card.dataset.caption;
+      document.querySelector("#lightbox-count").textContent = `${String(currentPhotoIndex + 1).padStart(2, "0")} / ${String(galleryCards.length).padStart(2, "0")}`;
+    }
+
+    galleryCards.forEach((card, index) => {
+      card.addEventListener("click", () => {
+        showPhoto(index);
+        lightbox.showModal();
+      });
+    });
+
+    document.querySelector("#lightbox-close").addEventListener("click", () => lightbox.close());
+    document.querySelector("#lightbox-previous").addEventListener("click", () => showPhoto(currentPhotoIndex - 1));
+    document.querySelector("#lightbox-next").addEventListener("click", () => showPhoto(currentPhotoIndex + 1));
+    document.addEventListener("keydown", (event) => {
+      if (!lightbox.open) return;
+      if (event.key === "Escape") lightbox.close();
+      if (event.key === "ArrowLeft") showPhoto(currentPhotoIndex - 1);
+      if (event.key === "ArrowRight") showPhoto(currentPhotoIndex + 1);
+    });
+
+    document.querySelector("#copy-spay").addEventListener("click", async () => {
+      const feedback = document.querySelector("#gift-feedback");
+      try {
+        await navigator.clipboard.writeText("083123499055");
+        feedback.textContent = "Nomor SPay berhasil disalin.";
+        window.setTimeout(() => { feedback.textContent = ""; }, 2500);
+      } catch (error) {
+        feedback.textContent = "Silakan salin nomor SPay secara manual.";
+      }
+    });
+
+    document.querySelector("#share-invitation").addEventListener("click", async () => {
+      const shareData = { title: document.title, text: "Undangan pernikahan Afif & Jashyka", url: window.location.href };
+      const label = document.querySelector("#share-label");
+      try {
+        if (navigator.share) {
+          await navigator.share(shareData);
+        } else {
+          await navigator.clipboard.writeText(window.location.href);
+          label.textContent = "Tautan disalin";
+          window.setTimeout(() => { label.textContent = "Bagikan"; }, 2200);
+        }
+      } catch (error) {
+        if (error.name !== "AbortError") {
+          label.textContent = "Gagal membagikan";
+          window.setTimeout(() => { label.textContent = "Bagikan"; }, 2200);
+        }
+      }
+    });
+  </script>
+</body>
+</html>
