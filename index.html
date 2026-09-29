@@ -47,17 +47,36 @@
     .cover::before {
       position: absolute;
       inset: 0;
-      background: linear-gradient(180deg, rgb(17 32 40 / 23%), rgb(17 32 40 / 65%)), url("pictures/LSR_0063.JPG.jpeg") center 66% / cover;
+      background: linear-gradient(180deg, rgb(17 32 40 / 16%), rgb(17 32 40 / 48%)), url("pictures/LSR_0063.JPG.jpeg") center 66% / cover no-repeat;
       content: "";
-      transform: scale(1.015);
+      transform: scale(1.025);
     }
-    .cover::after { position: absolute; inset: 1.2rem; border: 1px solid rgb(255 255 255 / 48%); content: ""; pointer-events: none; }
-    .cover-content { position: relative; z-index: 1; width: min(90%, 620px); padding: 3rem 1.5rem; text-align: center; animation: arrive .8s both; }
+    .cover::after {
+      position: absolute;
+      inset: 1.1rem;
+      border: 1px solid rgb(255 255 255 / 72%);
+      box-shadow: inset 0 0 0 1px rgb(255 255 255 / 14%);
+      content: "";
+      pointer-events: none;
+    }
+    .cover-content { position: relative; z-index: 1; width: min(88%, 760px); padding: 2.2rem 1.5rem 3rem; text-align: center; animation: arrive .8s both; }
     .cover .eyebrow { color: #d9e8f0; }
     .cover h1 { margin: 1.2rem 0 .8rem; font: 400 clamp(3.2rem, 10vw, 6.8rem)/.96 var(--serif); }
     .cover-date { margin: 1.5rem 0 2rem; color: #eef2f0; font-size: .85rem; letter-spacing: .17em; }
-    .cover-button { min-width: 190px; padding: .92rem 1.4rem; border: 1px solid rgb(255 255 255 / 80%); background: rgb(255 255 255 / 8%); color: var(--white); cursor: pointer; font-size: .76rem; letter-spacing: .12em; text-transform: uppercase; transition: background .2s, color .2s; }
-    .cover-button:hover, .cover-button:focus-visible { background: var(--white); color: var(--ink); }
+    .cover-button {
+      min-width: 190px;
+      padding: .92rem 1.4rem;
+      border: 1px solid rgb(255 255 255 / 82%);
+      background: rgb(255 255 255 / 7%);
+      color: var(--white);
+      cursor: pointer;
+      font-size: .76rem;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+      transition: background .2s, color .2s, transform .2s;
+      backdrop-filter: blur(1px);
+    }
+    .cover-button:hover, .cover-button:focus-visible { background: var(--white); color: var(--ink); transform: translateY(-1px); }
     .cover.is-closed { visibility: hidden; opacity: 0; pointer-events: none; }
 
     .site-header { display: flex; min-height: 76px; align-items: center; justify-content: space-between; gap: 1rem; padding: 0 clamp(1.25rem, 6vw, 6rem); border-bottom: 1px solid var(--line); }
@@ -65,19 +84,20 @@
     .header-date { color: var(--muted); font-size: .67rem; letter-spacing: .13em; text-transform: uppercase; }
     .header-link { color: var(--ink); font-size: .72rem; text-decoration-color: var(--blue); text-underline-offset: 5px; }
 
-    .hero { display: grid; min-height: min(730px, calc(100svh - 76px)); grid-template-columns: minmax(0, 1.12fr) minmax(330px, .88fr); padding: clamp(1rem, 3.2vw, 3rem) clamp(1.25rem, 6vw, 6rem); gap: clamp(1.5rem, 4vw, 4rem); align-items: stretch; }
-    .hero-photo { position: relative; min-height: 510px; overflow: hidden; background: var(--blue-pale); }
-    .hero-photo img { position: absolute; width: 100%; height: 100%; inset: 0; object-fit: cover; object-position: 51% 58%; }
-    .hero-photo::after { position: absolute; inset: 0; border: 1px solid rgb(255 255 255 / 30%); content: ""; pointer-events: none; }
-    .hero-copy { display: flex; flex-direction: column; align-items: flex-start; justify-content: center; padding: 2rem 0 2rem clamp(.25rem, 2vw, 2rem); }
-    .hero-copy .eyebrow { margin-bottom: 1.35rem; }
+    .hero { position: relative; display: grid; min-height: min(730px, calc(100svh - 76px)); grid-template-columns: minmax(0, 1fr); place-items: center; overflow: hidden; padding: clamp(1rem, 3.2vw, 3rem) clamp(1.25rem, 6vw, 6rem); gap: 0; text-align: center; }
+    .hero-photo { position: absolute; inset: 0; min-height: 0; overflow: hidden; background: #233b46; }
+    .hero-photo img { position: absolute; width: 100%; height: 100%; inset: 0; object-fit: cover; object-position: center 46%; }
+    .hero-photo::before { position: absolute; z-index: 1; inset: 0; background: linear-gradient(180deg, rgb(17 32 40 / 34%), rgb(17 32 40 / 62%)); content: ""; pointer-events: none; }
+    .hero-photo::after { position: absolute; z-index: 2; inset: 1.1rem; border: 1px solid rgb(255 255 255 / 55%); content: ""; pointer-events: none; }
+    .hero-copy { position: relative; z-index: 3; display: flex; width: min(100%, 720px); flex-direction: column; align-items: center; justify-content: center; padding: 2rem 0; color: var(--white); text-shadow: 0 2px 18px rgb(17 32 40 / 35%); }
+    .hero-copy .eyebrow { margin-bottom: 1.35rem; color: #d9e8f0; }
     .hero-copy h1 { margin: 0; font: 400 clamp(3.25rem, 6.3vw, 6.1rem)/.99 var(--serif); }
     .hero-copy h1 span { display: block; }
-    .ampersand { padding: .12em 0; color: var(--blue); font-style: italic; }
-    .hero-rule { width: 66px; height: 1px; margin: 1.8rem 0 1.35rem; background: var(--gold); }
-    .hero-date { margin: 0; font-size: .76rem; letter-spacing: .15em; text-transform: uppercase; }
-    .hero-note { max-width: 310px; margin: 1.1rem 0 0; color: var(--muted); font: italic 1.04rem/1.7 var(--serif); }
-    .scroll-cue { display: inline-flex; align-items: center; gap: .7rem; margin-top: 2.25rem; color: var(--ink); font-size: .68rem; letter-spacing: .1em; text-decoration: none; text-transform: uppercase; }
+    .ampersand { padding: .12em 0; color: #a9c9df; font-style: italic; }
+    .hero-rule { width: 66px; height: 1px; margin: 1.8rem 0 1.35rem; background: #d1b786; }
+    .hero-date { margin: 0; color: #f4f5f2; font-size: .76rem; letter-spacing: .15em; text-transform: uppercase; }
+    .hero-note { max-width: 420px; margin: 1.1rem 0 0; color: #edf1ef; font: italic 1.04rem/1.7 var(--serif); }
+    .scroll-cue { display: inline-flex; align-items: center; gap: .7rem; margin-top: 2.25rem; color: var(--white); font-size: .68rem; letter-spacing: .1em; text-decoration: none; text-transform: uppercase; }
     .scroll-cue::after { width: 32px; height: 1px; background: var(--blue); content: ""; transition: width .2s; }
     .scroll-cue:hover::after { width: 50px; }
 
@@ -169,9 +189,9 @@
       .site-header { min-height: 64px; padding-inline: 1.2rem; }
       .header-date { font-size: .58rem; }
       .header-link { font-size: .67rem; }
-      .hero { min-height: 0; grid-template-columns: 1fr; padding: .9rem 1rem 2.5rem; gap: 1.6rem; }
-      .hero-photo { min-height: 0; aspect-ratio: 1 / 1.05; }
-      .hero-photo img { object-position: 51% 61%; }
+      .hero { min-height: calc(100svh - 64px); grid-template-columns: 1fr; padding: 1.5rem 1rem 2rem; gap: 0; }
+      .hero-photo { min-height: 0; aspect-ratio: auto; }
+      .hero-photo img { object-position: center 46%; }
       .hero-copy { align-items: center; padding: .7rem .5rem 1rem; text-align: center; }
       .hero-copy .eyebrow { margin-bottom: .9rem; }
       .hero-copy h1 { font-size: clamp(3.35rem, 15vw, 5.3rem); }
@@ -227,7 +247,7 @@
   <main>
     <section class="hero" id="home" aria-labelledby="couple-names">
       <div class="hero-photo">
-        <img src="pictures/LSR_0063.JPG.jpeg" alt="Afif dan Jashyka mengenakan busana pengantin bernuansa biru" fetchpriority="high">
+        <img src="pictures/LSR_6925~3.JPG.jpeg" alt="Afif dan Jashyka dalam potret prewedding" fetchpriority="high">
       </div>
       <div class="hero-copy">
         <p class="eyebrow">Dengan memohon rahmat dan ridha Allah SWT</p>
@@ -294,6 +314,9 @@
         </button>
         <button class="gallery-card" type="button" data-src="pictures/LSR_0012.JPG.jpeg" data-alt="Potret pasangan pengantin dalam busana biru dan putih" data-caption="Kenangan yang disimpan">
           <img src="pictures/thumbs/LSR_0012.jpg" alt="" loading="lazy" decoding="async">
+        </button>
+        <button class="gallery-card" type="button" data-src="pictures/LSR_0031.JPG.jpeg" data-alt="Afif dan Jashyka bersama dalam pose santai di sesi foto" data-caption="Momen yang mencerahkan">
+          <img src="pictures/thumbs/LSR_0031.jpg" alt="" loading="lazy" decoding="async">
         </button>
       </div>
     </section>
@@ -366,7 +389,7 @@
   <dialog class="lightbox" id="gallery-lightbox" aria-label="Galeri foto pernikahan">
     <div class="lightbox-layout">
       <div class="lightbox-toolbar">
-        <span class="lightbox-count" id="lightbox-count" aria-live="polite">01 / 06</span>
+        <span class="lightbox-count" id="lightbox-count" aria-live="polite">01 / 07</span>
         <button class="lightbox-button" id="lightbox-close" type="button" aria-label="Tutup foto">
           <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m6 6 12 12M18 6 6 18"></path></svg>
         </button>
