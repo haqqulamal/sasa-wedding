@@ -425,11 +425,14 @@
     });
 
     openButton.addEventListener("click", () => {
+      playWeddingMusic();
       cover.classList.add("is-closed");
       document.body.classList.remove("is-locked");
       document.querySelector("#home").setAttribute("tabindex", "-1");
       document.querySelector("#home").focus({ preventScroll: true });
     });
+
+    playWeddingMusic();
 
     function updateCountdown() {
       const now = new Date();
