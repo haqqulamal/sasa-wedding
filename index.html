@@ -180,8 +180,21 @@
     .closing .signature { margin-top: 1.5rem !important; color: var(--ink) !important; font: 400 1.55rem var(--serif) !important; }
     footer { display: flex; min-height: 74px; align-items: center; justify-content: center; padding: 1rem; color: var(--muted); font-size: .67rem; letter-spacing: .06em; text-align: center; }
 
+    .cover-content > *, body.is-open .hero-copy > * { animation: arrive .65s both; }
+    .cover-content > :nth-child(2), body.is-open .hero-copy > :nth-child(2) { animation-delay: .12s; }
+    .cover-content > :nth-child(3), body.is-open .hero-copy > :nth-child(3) { animation-delay: .24s; }
+    .cover-content > :nth-child(4), body.is-open .hero-copy > :nth-child(4) { animation-delay: .36s; }
+    .cover-content > :nth-child(5), body.is-open .hero-copy > :nth-child(5) { animation-delay: .48s; }
+    .cover-content > :nth-child(6), body.is-open .hero-copy > :nth-child(6) { animation-delay: .6s; }
     .reveal { opacity: 0; transform: translateY(16px); transition: opacity .65s ease, transform .65s ease; }
     .reveal.is-visible { opacity: 1; transform: translateY(0); }
+    .reveal > * { opacity: 0; transform: translateY(12px); transition: opacity .55s ease, transform .55s ease; }
+    .reveal.is-visible > * { opacity: 1; transform: translateY(0); }
+    .reveal.is-visible > :nth-child(2) { transition-delay: .08s; }
+    .reveal.is-visible > :nth-child(3) { transition-delay: .16s; }
+    .reveal.is-visible > :nth-child(4) { transition-delay: .24s; }
+    .reveal.is-visible > :nth-child(5) { transition-delay: .32s; }
+    .reveal.is-visible > :nth-child(6) { transition-delay: .4s; }
     @keyframes arrive { from { opacity: 0; transform: translateY(12px); } to { opacity: 1; transform: translateY(0); } }
 
     @media (max-width: 760px) {
@@ -225,6 +238,8 @@
     @media (prefers-reduced-motion: reduce) {
       *, *::before, *::after { scroll-behavior: auto !important; animation-duration: .01ms !important; animation-iteration-count: 1 !important; transition-duration: .01ms !important; }
       .reveal { opacity: 1; transform: none; }
+      .reveal > * { opacity: 1; transform: none; transition-delay: 0s; }
+      .cover-content > *, body.is-open .hero-copy > * { animation-delay: 0s !important; }
     }
   </style>
 </head>
@@ -409,7 +424,10 @@
 
   <footer>Afif Dhiya'ul Haq &amp; Jashyka Asadiyyah Qonita &nbsp;·&nbsp; 10.10.2026</footer>
 
-  <audio id="wedding-music" src="wedding-music.ogg" preload="none" loop></audio>
+  <audio id="wedding-music" preload="none" loop>
+    <source src="wedding-music.mp3" type="audio/mpeg">
+    <source src="wedding-music.ogg" type="audio/ogg">
+  </audio>
   <button class="music-toggle" id="music-toggle" type="button" aria-label="Putar musik" aria-pressed="false">
     <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 18V5l12-2v13"></path><circle cx="6" cy="18" r="3"></circle><circle cx="18" cy="16" r="3"></circle></svg>
     <span id="music-label">Putar musik</span>
@@ -449,6 +467,7 @@
 
     openButton.addEventListener("click", () => {
       playWeddingMusic();
+      document.body.classList.add("is-open");
       cover.classList.add("is-closed");
       document.body.classList.remove("is-locked");
       document.querySelector("#home").setAttribute("tabindex", "-1");
